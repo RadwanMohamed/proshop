@@ -4,12 +4,15 @@ import connectDB from "./config/db.js";
 import cros from "./middleware/crosMiddleware.js";
 import errorMiddleware from "./middleware/errorMidlleare.js";
 import productRoute  from "./routes/product.js";
+import userRoute  from "./routes/user.js";
 dotenv.config();
 connectDB();
  
 const app = express();
 
+app.use(express.json());
 app.use('/api/products',productRoute);
+app.use('/api/users',userRoute);
 app.use(cros);
 
 app.use(errorMiddleware);
