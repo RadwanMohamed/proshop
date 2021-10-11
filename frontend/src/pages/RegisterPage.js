@@ -27,7 +27,7 @@ const RegisterPage = ({ history, location }) => {
     if (userInfo && Object.entries(userInfo).length > 0) {
       history.push(redirect);
     }
-  }, [useEffect, userInfo, redirect]);
+  }, [ userInfo, redirect]);
   const submitHandler = (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
